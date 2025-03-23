@@ -4,28 +4,235 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>My Website</title>
+      <title>MoveMaster | Overview</title>
       <link rel="stylesheet" href="./styles.css">
-      <link rel="icon" href="./favicon.ico" type="image/x-icon">
+      <link rel="icon" href="images/mm-icon.png" type="image/x-icon">
    </head>
    <body>
-
-      <h2>CSS Template using Float</h2>
-      <p>In this example, we have created a header, three unequal columns and a footer. On smaller screens, the columns will stack on top of each other.</p>
-      <p>Resize the browser window to see the responsive effect.</p>
-      
-      <div class="header">
-         <h2>Header</h2>
-      </div>
-      
-      <div class="row">
-         <div class="column side" style="background-color:#aaa;">Column</div>
-         <div class="column middle" style="background-color:#bbb;">Column</div>
-         <div class="column side" style="background-color:#ccc;">Column</div>
-      </div>
-      
-      <div class="footer">
-         <p>Footer</p>
-      </div>
+      <div class="container">
+         <div class="subcontainer">
+           <div class="header">
+             <img class="mm-icon" src="images/mm-icon.png" />
+             <img class="mm-logo" src="images/mm-logo.png" />
+             <div class="vertical-line"></div>
+             <a href="https://new.rcos.io/projects/movemaster/?semester=202501" class="rcos-button" target="_blank">
+               <div class="view-our-project-on">View our Project on</div>
+               <img class="rcos-logo" src="images/rcos-logo.png" />
+             </a>
+             <div class="vertical-line"></div>
+             <a href="https://github.com/move-master" class="git-hub-button" target="_blank">
+               <div class="view-our-repos-on">View our Repos on</div>
+               <img class="git-hub-logo" src="images/git-hub-logo.png" />
+             </a>
+           </div>
+           <div class="contents">
+             <div class="sidebar">
+               <div class="overview-button">Overview</div>
+               <div class="u-24">
+                 <br />
+                 U24
+               </div>
+               <div class="u-24-mtgm-button">Modeling the Game Mathematically</div>
+               <div class="u-24-gsvis-button">Game-State Visualizer in Scratch</div>
+               <div class="u-24-gssv-1-button">Game-State Simulator V1 in Unity</div>
+               <div class="s-25">
+                 <br />
+                 S25
+               </div>
+               <div class="s-25-rour-button">
+                 Revisiting our Underlying Representation
+               </div>
+               <div class="s-25-gsgip-button">Game Sequence Generator in Python</div>
+               <div class="s-25-gssv-2-button">Game-State Simulator V2 in Unity</div>
+             </div>
+             <div class="content">
+               <div class="overview-text">
+                 <span>
+                   <span class="overview-text-span">
+                     Overview
+                     <br />
+                     <br />
+                   </span>
+                   <span class="overview-text-span2">
+                     Introduction
+                     <br />
+                     <br />
+                   </span>
+                   <span class="overview-text-span3">
+                     Welcome to MoveMaster!
+                     <br />
+                   </span>
+                   <span class="overview-text-span4">
+                     Originally an RCOS project, MoveMaster was created with the vision
+                     of combining physics simulation and machine learning to determine
+                     the most optimal move set for winning various online and tabletop
+                     games. By leveraging advanced computational techniques, MoveMaster
+                     strives to provide users with strategic recommendations tailored
+                     to the selected game.
+                   </span>
+                 </span>
+               </div>
+               <div class="jenga-subsection">
+                 <div class="overview-text2">
+                   <span>
+                     <span class="overview-text-2-span">
+                       Jenga
+                       <br />
+                     </span>
+                     <span class="overview-text-2-span2">
+                       <br />
+                     </span>
+                     <span class="overview-text-2-span3">In</span>
+                     <span class="overview-text-2-span4">Jenga</span>
+                     <span class="overview-text-2-span5">
+                       , players take turns strategically removing pieces from a tower
+                       made of 54 wooden blocks, and stacking these pieces on top. The
+                       objective of the game is to avoid knocking over the tower.
+                       Although this seems like a relatively simple objective, in
+                       practice, this proves to be easier said than done.
+                       <br />
+                       <br />
+                       MoveMaster allows users to define the current state of a Jenga
+                       game (i.e., the displacement of blocks). Based on the current
+                       configuration of the tower, MoveMaster suggests the best
+                       possible move to maximize a player&#039;s chances of success.
+                       <br />
+                       As it currently stands, Jenga is the only tabletop game we have
+                       been developing MoveMaster for. However, we are open to
+                       exploring other tabletop games in the future.
+                       <br />
+                     </span>
+                   </span>
+                 </div>
+                 <img class="jenga-tower-cropped" src="images/jenga-tower-cropped.png" />
+               </div>
+               <div class="jenga-subsection">
+                 <div class="overview-text3">
+                   <span>
+                     <span class="overview-text-3-span">
+                       Timeline
+                       <br />
+                     </span>
+                     <span class="overview-text-3-span2">
+                       <br />
+                       U24
+                       <br />
+                     </span>
+                     <span class="overview-text-3-span3">
+                       <br />
+                     </span>
+                     <span class="overview-text-3-span4">
+                       We first started working on MoveMaster in the summer of 2024.
+                       Over the course of U24, we achieved the following:
+                       <br />
+                     </span>
+                     <ol class="overview-text-3-span5">
+                       <li>
+                         Developed a basic conjecture about when blocks are safe vs.
+                         unsafe to remove.
+                       </li>
+                     </ol>
+                     <span class="overview-text-3-span6">
+                       Because the physical dynamics behind Jenga are extremely tedious
+                       to calculate by hand, and it is impossible to simulate all
+                       possible tower configurations to determine the outcome of every
+                       game state, we decided to come up with a generalized conjecture
+                       about when blocks are safe vs. unsafe to remove. Although this
+                       required us to greatly simplify the problem at hand (i.e., we
+                       ignored stochastic factors like human error, friction between
+                       blocks, and non-uniformity among pieces), this conjecture
+                       enabled us to begin developing a working model that we would
+                       eventually expand to include these factors.
+                       <br />
+                       To learn more about our conjecture (and our underlying
+                       representation of the game as a whole), see Modeling the Game
+                       Mathematically.
+                       <br />
+                       <br />
+                     </span>
+                     <ol class="overview-text-3-span7">
+                       <li>Developed a primitive game-state visualizer in Scratch.</li>
+                     </ol>
+                     <span class="overview-text-3-span8">
+                       To aid in our discourse surrounding the development of our Unity
+                       game-state simulator, we created a very primitive game-state
+                       visualizer using Scratch. The visualizer accepts a 54-bit binary
+                       sequence of 0s and 1s, and visualizes this sequence as a Jenga
+                       tower, where 0s are empty spaces and 1s are blocks.
+                       <br />
+                       To learn more about our visualizer, see Game-State Visualizer in
+                       Scratch.
+                       <br />
+                       <br />
+                     </span>
+                     <ol class="overview-text-3-span9">
+                       <li>
+                         Developed a physics-based Jenga game-state simulator in Unity.
+                       </li>
+                     </ol>
+                     <span class="overview-text-3-span10">
+                       To serve as a basic framework/prototype for our eventual
+                       machine-learning program, we created a Jenga game-state
+                       simulator that makes use of Unity&#039;s built-in physics
+                       engine. This simulator allows a user to remove blocks from the
+                       tower, watch the outcome of their configuration in real time (by
+                       enabling physics), and save/load various configurations of said
+                       tower. Additionally, this simulator acts a slightly more
+                       sophisticated version of our initial Scratch game-state
+                       visualizer.
+                       <br />
+                       To learn more about the first version of our game-state
+                       simulator, see Game-State Simulator V1 in Unity.
+                       <br />
+                     </span>
+                     <span class="overview-text-3-span11">
+                       <br />
+                       S25
+                       <br />
+                     </span>
+                     <span class="overview-text-3-span12">
+                       <br />
+                     </span>
+                     <span class="overview-text-3-span13">
+                       In the first half of S25, we have achieved the following:
+                       <br />
+                     </span>
+                     <ol class="overview-text-3-span14">
+                       <li>
+                         Revised our underlying game-state representation to better
+                         adhere to the rules of Jenga.
+                       </li>
+                     </ol>
+                     <span class="overview-text-3-span15">
+                       [Placeholder Text]
+                       <br />
+                       <br />
+                     </span>
+                     <ol class="overview-text-3-span16">
+                       <li>Created a Jenga game sequence generator in Python.</li>
+                     </ol>
+                     <span class="overview-text-3-span17">
+                       [Placeholder Text]
+                       <br />
+                       <br />
+                     </span>
+                     <ol class="overview-text-3-span18">
+                       <li>
+                         Updated our Unity simulator to accept/execute user-inputted
+                         game sequences.
+                       </li>
+                     </ol>
+                     <span class="overview-text-3-span19">
+                       [Placeholder Text]
+                       <br />
+                       <br />
+                     </span>
+                   </span>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>       
    </body>
 </html>
