@@ -3,11 +3,7 @@
   box-sizing: border-box;
 }
 .container {
-  background: linear-gradient(
-    180deg,
-    rgba(34, 34, 40, 1) 0%,
-    rgba(45, 40, 42, 1) 100%
-  );
+  background: rgba(34, 34, 40, 1);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -176,13 +172,14 @@
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
-  width: 300px;
+  width: 350px;
   min-height: 920px;
   position: relative;
   overflow: hidden;
 }
 .overview-button {
-  color: #ff8aa2;
+  padding: 0px 0px 0px 10px;
+  color: white;
   text-align: left;
   font-family: "Inter-Bold", sans-serif;
   font-size: 20px;
@@ -190,6 +187,13 @@
   font-weight: 700;
   position: relative;
   align-self: stretch;
+  transition: all 0.3s ease-in-out;
+}
+.overview-button:hover {
+  background-color:rgba(174, 166, 177, 0.25);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
 }
 .u-24 {
   color: #edeaff;
@@ -202,6 +206,7 @@
   align-self: stretch;
 }
 .u-24-mtgm-button {
+  padding: 5px 0px 0px 10px;
   color: #aea6b1;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
@@ -210,8 +215,15 @@
   font-weight: 400;
   position: relative;
   align-self: stretch;
+  transition: all 0.3s ease-in-out;
+}
+.u-24-mtgm-button:hover {
+  background-color:rgba(174, 166, 177, 0.25);
+  color: white;
+  border-radius: 5px;
 }
 .u-24-gsvis-button {
+  padding: 5px 0px 0px 10px;
   color: #aea6b1;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
@@ -220,8 +232,15 @@
   font-weight: 400;
   position: relative;
   align-self: stretch;
+  transition: all 0.3s ease-in-out;
+}
+.u-24-gsvis-button:hover {
+  background-color:rgba(174, 166, 177, 0.25);
+  color: white;
+  border-radius: 5px;
 }
 .u-24-gssv-1-button {
+  padding: 5px 0px 0px 10px;
   color: #aea6b1;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
@@ -230,6 +249,12 @@
   font-weight: 400;
   position: relative;
   align-self: stretch;
+  transition: all 0.3s ease-in-out;
+}
+.u-24-gssv-1-button:hover {
+  background-color:rgba(174, 166, 177, 0.25);
+  color: white;
+  border-radius: 5px;
 }
 .s-25 {
   color: #edeaff;
@@ -242,6 +267,7 @@
   align-self: stretch;
 }
 .s-25-rour-button {
+  padding: 5px 0px 0px 10px;
   color: #aea6b1;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
@@ -250,17 +276,15 @@
   font-weight: 400;
   position: relative;
   align-self: stretch;
+  transition: all 0.3s ease-in-out;
+}
+.s-25-rour-button:hover {
+  background-color:rgba(174, 166, 177, 0.25);
+  color: white;
+  border-radius: 5px;
 }
 .s-25-gsgip-button {
-  color: #aea6b1;
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 15px;
-  line-height: 30px;
-  font-weight: 400;
-  position: relative;
-}
-.s-25-gssv-2-button {
+  padding: 5px 0px 0px 10px;
   color: #aea6b1;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
@@ -269,6 +293,29 @@
   font-weight: 400;
   position: relative;
   align-self: stretch;
+  transition: all 0.3s ease-in-out;
+}
+.s-25-gsgip-button:hover {
+  background-color:rgba(174, 166, 177, 0.25);
+  color: white;
+  border-radius: 5px;
+}
+.s-25-gssv-2-button {
+  padding: 5px 0px 0px 10px;
+  color: #aea6b1;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  transition: all 0.3s ease-in-out;
+}
+.s-25-gssv-2-button:hover {
+  background-color:rgba(174, 166, 177, 0.25);
+  color: white;
+  border-radius: 5px;
 }
 .content {
   background: rgba(71, 79, 81, 0);
@@ -538,17 +585,23 @@
 
 
 
-
 /* Do not change these! */
+a {
+  text-decoration: none;
+}
+.link {
+  color: #ff8aa2;
+  font-weight: bold;
+}
 body {
-  background-color: #2d282a;
+  background-color: rgba(34, 34, 40, 1);
 }
 ::-webkit-scrollbar {
   width: 10px; /* Width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(#17bebb,#ef2e55); /* Track color */
+  background: linear-gradient(#17bebb,#ff8aa2); /* Track color */
   border-radius: 5px;
 }
 
