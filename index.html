@@ -7,6 +7,11 @@
       <title>MoveMaster | Overview</title>
       <link rel="stylesheet" href="./styles.css">
       <link rel="icon" href="images/mm-icon.png" type="image/x-icon">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script type="text/javascript" async
+  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
    </head>
    <body>
       <div class="container">
@@ -27,12 +32,12 @@
            </div>
            <div class="contents">
              <div class="sidebar">
-               <div class="overview-button"><div class="link">Overview</div></div>
+               <div class="overview-button">Overview</div>
                <div class="u-24">
                  <br />
                  U24
                </div>
-               <a href="pages/modeling-the-game-mathematically.html" class="u-24-mtgm-button">Modeling the Game Mathematically</a>
+               <a class="u-24-mtgm-button">Modeling the Game Mathematically</a>
                <a href="pages/game-state-visualizer-in-scratch.html" class="u-24-gsvis-button">Game-State Visualizer in Scratch</a>
                <a href="pages/game-state-simulator-v1-in-unity.html" class="u-24-gssv-1-button">Game-State Simulator V1 in Unity</a>
                <div class="s-25">
@@ -46,15 +51,14 @@
                <a href="pages/game-state-simulator-v2-in-unity.html" class="s-25-gssv-2-button">Game-State Simulator V2 in Unity</a>
              </div>
              <div class="content">
-               <div class="overview-text">
+
+
+              <div class="page" id="overview_page">
+
+               <div class="jenga-subsection">
                  <span>
                    <span class="overview-text-span">
                      Overview
-                     <br />
-                     <br />
-                   </span>
-                   <span class="overview-text-span2">
-                     Introduction
                      <br />
                      <br />
                    </span>
@@ -227,9 +231,115 @@
                    </span>
                  </div>
                </div>
+
+               </div>
+
+
+
+
+
+
+               <div class="page" id="mtgm_page">
+
+                <div class="jenga-subsection">
+                  <span>
+                    <span class="overview-text-span">
+                      Modeling The Game Mathematically
+                      <br />
+                      <br />
+                    </span>
+                    <span class="overview-text-span4">
+                      In a classic game of Jenga, there are 54 wooden blocks. Assuming we can have less than 54 blocks in play at any point in the game (i.e., assuming we break the official rules of Jenga), this means that there are 2<sup>54</sup> = 18,014,398,509,000,000 (roughly 18 quadrillion) unique configurations of jenga blocks achievable by simply removing pieces from the original tower. In order to differentiate these game states from one another, let’s represent a game configuration as a 54-bit long sequence of binary:<br/>
+
+                      <div class="binary">111 111 111 111 111 111 111 111 111 111 111 111 111 111 111 111 111 111</div>
+
+                    </span>
+                  </span>
+                </div>
+                <div class="jenga-subsection">
+                  <div class="overview-text2">
+                      <span class="overview-text-2-span5">
+                        In our model, the left-most bits represent the blocks at the very bottom of the tower, and the right-most bits represent the blocks at the very top of the tower. Additionally, “1” bits indicate the presence of a block in that position, while “0” bits indicate the absence of a block. Furthermore, every tribit represents a layer in the Jenga tower, with the bits progressing from furthest from the camera → closest to the camera when being read from left → right. 
+                        Since this manner of representing the configuration of a Jenga game is not particularly intuitive, we provide a labeled diagram to the right:                    
+                      </span>
+                  </div>
+                  <img class="jenga-tower-cropped" src="images/jenga-tower-labeled.png" />
+                </div>
+                <div class="jenga-subsection">
+                  <div class="overview-text3">
+                    Let’s consider a different sequence:<br/>
+
+                    <div class="binary">101 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101</div>
+                    
+                    Visualizing this sequence, we have the following game configuration:<br/>
+
+                    <img style="display: block; margin: 0 auto;" class="jenga-tower-cropped" src="images/mtgm-tower-1.png" />
+
+                    This would be considered a “<b>success state</b>” because this tower is structurally sound and would not collapse.<br/>
+                    Let’s consider another sequence:<br/>
+
+                    <div class="binary">010 010 010 010 010 010 010 010 010 010 010 010 010 010 010 010 010 010</div>
+
+                    If we were to visualize the above sequence:<br/>
+
+                    <img style="display: block; margin: 0 auto;" class="jenga-tower-cropped" src="images/mtgm-tower-2.png" />
+
+                    Similar to the previous configuration, this would also be considered a “success state” because this tower is structurally sound and would not collapse.<br/>
+                    On the other hand, if we were to visualize a sequence like:<br/>
+
+                    <div class="binary">111 111 111 000 000 000 111 111 111 000 000 000 111 111 111 000 000 000</div>
+
+                    This would result in the following game configuration:<br/>
+
+                    <img style="display: block; margin: 0 auto;" class="jenga-tower-cropped" src="images/mtgm-tower-3.png" />
+
+                    This would immediately be ruled out as a “<b>fail state</b>” because the tower is (clearly) unstable and would collapse.<br/>
+                    Similarly, if we were to visualize a sequence like:<br/>
+
+                    <div class="binary">001 001 100 100 001 001 100 100 001 001 100 100 001 001 100 100 001 001</div>
+
+                    This would result in the following game configuration:<br/>
+
+                    <img style="display: block; margin: 0 auto;" class="jenga-tower-cropped" src="images/mtgm-tower-4.png" />
+
+                    Again, this would be considered a “fail state” because the tower is highly unstable and would collapse.<br/>
+
+                    Although we could simply use the physics engine to determine which states are success and fail states (i.e., whether or not the tower falls over), if we assume that running a single simulation takes 0.1 seconds, this means that simulating all 2<sup>54</sup> possible configurations would take approximately 57,123,283 years (this is unreasonably long!). Thus, we must rely on analysis techniques to eliminate as many fail states as we can.<br/><br/>
+                    <span class="overview-text-span3">
+                      Eliminating “Fail States” Through Analysis
+                      <br />
+                    </span>
+                    As demonstrated earlier, not all 2<sup>54</sup> of these configurations are physically possible, as some of these combinations would result in floating pieces, or pieces whose center of mass is not supported, immediately constituting a fail state. In order to determine what fraction of these configurations result in fail states, let us reconsider 2 of the above examples:
+
+                    <img style="display: block; margin: 0 auto;" class="jenga-tower-wide" src="images/mtgm-tower-5.png" />
+
+                    On the <b>left</b> is <span class="binary">111 111 111 000 000 000 111 111 111 000 000 000 111 111 111 000 000 000</span>.<br/>
+                    On the <b>right</b> is <span class="binary">001 001 100 100 001 001 100 100 001 001 100 100 001 001 100 100 001 001</span>.<br/>
+
+                    A similarity that exists between these two fail configurations is the presence of <b>two or more consecutive zeros within a single tribit</b>. Let’s visualize some more sequences to determine if this is a consistent pattern:<br/>
+
+                    <img style="display: block; margin: 0 auto;" class="jenga-tower-wide2" src="images/mtgm-tower-6.png" />
+
+
+
+
+
+
+                  </div>
+                </div>
+ 
+                </div>
+
+
+
+
+               
+
              </div>
            </div>
          </div>
-       </div>       
+       </div>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="util.js"></script>   
    </body>
 </html>

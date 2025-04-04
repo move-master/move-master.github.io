@@ -1,3 +1,10 @@
+body {
+  color: #edeaff;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 40px;
+  font-weight: 400;
+}
 .container,
 .container * {
   box-sizing: border-box;
@@ -339,8 +346,8 @@
 .overview-text-span {
   color: #edeaff;
   font-family: "Inter-Bold", sans-serif;
-  font-size: 55px;
-  line-height: 50px;
+  font-size: 300%;
+  line-height: auto;
   font-weight: 700;
 }
 .overview-text-span2 {
@@ -375,6 +382,7 @@
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
+  max-width: 1050px;
 }
 .overview-text2 {
   color: #edeaff;
@@ -421,6 +429,22 @@
 .jenga-tower-cropped {
   flex-shrink: 0;
   width: 224px;
+  height: 516px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 224/516;
+}
+.jenga-tower-wide {
+  flex-shrink: 0;
+  width: 516px;
+  height: 516px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 224/516;
+}
+.jenga-tower-wide2 {
+  flex-shrink: 0;
+  width: 650px;
   height: 516px;
   position: relative;
   object-fit: cover;
@@ -576,6 +600,17 @@
   font-size: 15px;
   line-height: 40px;
   font-weight: 400;
+}
+
+.page {
+  display:contents;
+  flex-direction: column;
+}
+.binary {
+  padding-top: 2vh;
+  padding-bottom: 0vh;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 
