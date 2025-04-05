@@ -13,7 +13,7 @@ $(document).ready(function(){
       $(".overview-button").addClass("link");
       $(".u-24-mtgm-button").removeClass("link")
       $(".u-24-gsvis-button").removeClass("link")
-      $(".u-24-gssv1-button").removeClass("link")
+      $(".u-24-gssv-1-button").removeClass("link")
       $(".s-25-rour-button").removeClass("link")
       $(".s-25-gsgip-button").removeClass("link")
       $(".s-25-gssv2-button").removeClass("link")
@@ -31,7 +31,7 @@ $(document).ready(function(){
       $(".overview-button").removeClass("link");
       $(".u-24-mtgm-button").addClass("link")
       $(".u-24-gsvis-button").removeClass("link")
-      $(".u-24-gssv1-button").removeClass("link")
+      $(".u-24-gssv-1-button").removeClass("link")
       $(".s-25-rour-button").removeClass("link")
       $(".s-25-gsgip-button").removeClass("link")
       $(".s-25-gssv2-button").removeClass("link")
@@ -49,7 +49,7 @@ $(document).ready(function(){
       $(".overview-button").removeClass("link");
       $(".u-24-mtgm-button").removeClass("link")
       $(".u-24-gsvis-button").addClass("link")
-      $(".u-24-gssv1-button").removeClass("link")
+      $(".u-24-gssv-1-button").removeClass("link")
       $(".s-25-rour-button").removeClass("link")
       $(".s-25-gsgip-button").removeClass("link")
       $(".s-25-gssv2-button").removeClass("link")
@@ -63,11 +63,11 @@ $(document).ready(function(){
     });
 
 
-    $(".u-24-gssv1-button").click(function(){
+    $(".u-24-gssv-1-button").click(function(){
       $(".overview-button").removeClass("link");
       $(".u-24-mtgm-button").removeClass("link")
       $(".u-24-gsvis-button").removeClass("link")
-      $(".u-24-gssv1-button").addClass("link")
+      $(".u-24-gssv-1-button").addClass("link")
       $(".s-25-rour-button").removeClass("link")
       $(".s-25-gsgip-button").removeClass("link")
       $(".s-25-gssv2-button").removeClass("link")
@@ -85,7 +85,7 @@ $(document).ready(function(){
       $(".overview-button").removeClass("link");
       $(".u-24-mtgm-button").removeClass("link")
       $(".u-24-gsvis-button").removeClass("link")
-      $(".u-24-gssv1-button").removeClass("link")
+      $(".u-24-gssv-1-button").removeClass("link")
       $(".s-25-rour-button").addClass("link")
       $(".s-25-gsgip-button").removeClass("link")
       $(".s-25-gssv2-button").removeClass("link")
@@ -103,7 +103,7 @@ $(document).ready(function(){
       $(".overview-button").removeClass("link");
       $(".u-24-mtgm-button").removeClass("link")
       $(".u-24-gsvis-button").removeClass("link")
-      $(".u-24-gssv1-button").removeClass("link")
+      $(".u-24-gssv-1-button").removeClass("link")
       $(".s-25-rour-button").removeClass("link")
       $(".s-25-gsgip-button").addClass("link")
       $(".s-25-gssv2-button").removeClass("link")
@@ -121,7 +121,7 @@ $(document).ready(function(){
       $(".overview-button").removeClass("link");
       $(".u-24-mtgm-button").removeClass("link")
       $(".u-24-gsvis-button").removeClass("link")
-      $(".u-24-gssv1-button").removeClass("link")
+      $(".u-24-gssv-1-button").removeClass("link")
       $(".s-25-rour-button").removeClass("link")
       $(".s-25-gsgip-button").removeClass("link")
       $(".s-25-gssv2-button").addClass("link")

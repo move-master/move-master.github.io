@@ -32,14 +32,14 @@
            </div>
            <div class="contents">
              <div class="sidebar">
-               <div class="overview-button">Overview</div>
+               <div class="overview-button unloadButton">Overview</div>
                <div class="u-24">
                  <br />
                  U24
                </div>
-               <a class="u-24-mtgm-button">Modeling the Game Mathematically</a>
-               <a class="u-24-gsvis-button">Game-State Visualizer in Scratch</a>
-               <a href="pages/game-state-simulator-v1-in-unity.html" class="u-24-gssv-1-button">Game-State Simulator V1 in Unity</a>
+               <a class="u-24-mtgm-button unloadButton">Modeling the Game Mathematically</a>
+               <a class="u-24-gsvis-button unloadButton">Game-State Visualizer in Scratch</a>
+               <a class="u-24-gssv-1-button unloadButton">Game-State Simulator V1 in Unity</a>
                <div class="s-25">
                  <br />
                  S25
@@ -343,9 +343,9 @@
                         Embedded below is a first version of our game-state visualizer, mocked up in <a class="link" href="https://scratch.mit.edu/projects/1038274559" target="_blank">Scratch</a>.<br/>
                         The visualizer accepts a 54-bit binary sequence of 0s and 1s, and visualizes this sequence as a Jenga tower, where 0s are empty spaces and 1s are blocks.<br/>
                         This visualizer was created to aid in our discourse surrounding the development of our eventual Unity game-state simulator, as we did not have access to an actual Jenga set at the time, making it difficult to convey ideas effectively.<br/>
-                        This tool can visualize all 2^54 unique configurations of Jenga blocks, including all impossible configurations (i.e., configurations with floating blocks).<br/><br/>
+                        This tool can visualize all 2<sup>54</sup> unique configurations of Jenga blocks, including all impossible configurations (i.e., configurations with floating blocks).<br/><br/>
 
-                        It is worth noting that any state that is not <span class="binary">111111111111111111111111111111111111111111111111111111</span> is technically <em>not</em> a valid game state, as all 54 blocks must be in play during an official game of Jenga. Subsequently, we stopped using this visualizer soon after we began developing <a class="u-24-gssv1-button" style="color: #ff8aa2; font-weight: bold; padding: 0 0 0 0; background-color:rgba(0, 0, 0, 0);">V1 of our Unity Game-State Simulator.</a><br/><br/>
+                        It is worth noting that any state that is not <span class="binary">111111111111111111111111111111111111111111111111111111</span> is technically <em>not</em> a valid game state, as all 54 blocks must be in play during an official game of Jenga.<br/><br/>
                         <span class="overview-text-span3">
                           Instructions
                           <br />
@@ -376,6 +376,108 @@
                   </div>
    
                   </div>
+
+
+
+
+
+
+                  <div class="page" id="gssv1_page">
+
+                    <div class="jenga-subsection">
+                      <span>
+                        <span class="overview-text-span">
+                          Game-State Simulator V1 in Unity
+                          <br />
+                          <br />
+                        </span>
+                        <span class="overview-text-span4">
+                          Embedded below is V1 of our <b>Unity Game-State Simulator</b>.<br/>
+                          To serve as a basic framework/prototype for our eventual machine-learning program, we created a Jenga game-state simulator that makes use of Unity's built-in physics engine. This simulator allows a user to remove blocks from the tower, watch the outcome of their configuration in real time (by enabling physics), and save/load various configurations of said tower. Additionally, this simulator acts a slightly more sophisticated version of our initial Scratch game-state visualizer.<br/><br/>
+  
+                          <span class="overview-text-span3">
+                            Instructions
+                            <br />
+                          </span>
+                          To start the simulator, press <b>Launch Simulator (V1)</b>.<br/>
+                          When the simulation starts, select blocks to remove them from the tower.<br/>
+                          When you're ready, press the <b>Start Button</b> to toggle gravity, and watch the chaos unfold.<br/>
+                          <span class="overview-text-span3">
+                            Controls
+                            <br />
+                          </span>
+                          <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                            <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/status_ok_tex.png" style="width:5vh;height:5vh;"></img> 
+                            <div style="padding-left: 1vh;">Status Indicator (Check or Cross)</div>
+                          </div>
+
+                          <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                            <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/reset_state_button_tex.png" style="width:5vh;height:5vh;"></img> 
+                            <div style="padding-left: 1vh;">Reset Tower</div>
+                          </div>
+
+                          <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                            <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/save_state_button_tex.png" style="width:5vh;height:5vh;"></img> 
+                            <div style="padding-left: 1vh;">Save Current Tower Configuration</div>
+                          </div>
+
+                          <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                            <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/play_button_tex.png" style="width:5vh;height:5vh;"></img> 
+                            <div style="padding-left: 1vh;">Start/Stop Simulation (Toggle Gravity)</div>
+                          </div>
+
+                          <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                            <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/change_view_button_tex.png" style="width:5vh;height:5vh;"></img> 
+                            <div style="padding-left: 1vh;">Change Viewing Angle</div>
+                          </div>
+                          <div class="jenga-subsection">
+                            
+                            
+                            <button id="loadGame" style="background-color: rgb(74, 191, 187); font-family: 'Inter-Regular', sans-serif; padding: 10px; border-radius: 5px; ">Launch Simulator <b>(V1)</b></button>
+    
+                            <div id="iframeContainer"></div> <!-- This is where the iframe will be added -->
+
+                            <script>
+                                const loadButton = document.getElementById("loadGame");
+                                const unloadButtons = document.querySelectorAll(".unloadButton"); // Select all elements with the "unloadButton" class
+                                const container = document.getElementById("iframeContainer");
+
+                                loadButton.addEventListener("click", function() {
+                                    $(this).hide();
+                                    if (!container.querySelector("iframe")) { // Only add if it's not already loaded
+                                        const iframe = document.createElement("iframe");
+                                        iframe.src = "/MoveMaster_WEBGL_build_V4/"; // Your game URL
+                                        iframe.width = "1000";
+                                        iframe.height = "800";
+                                        iframe.frameBorder = "3"; // Set the frame border
+                                        iframe.style.border = "none"; // Set iframe border style
+                                        iframe.allowFullscreen = true;
+                                        container.appendChild(iframe);
+                                    }
+                                });
+
+                                // Loop through all unloadButton elements and add the event listener to each
+                                unloadButtons.forEach(function(button) {
+                                    button.addEventListener("click", function() {
+                                        $("#loadGame").show();
+                                        container.innerHTML = ""; // Removes the iframe
+                                    });
+                                });
+                            </script>
+
+                          </div>   
+                          <span class="overview-text-span3">
+                            Not All Bugs Are Bad – Some Are Features
+                            <br />
+                          </span>
+                          Not unlike our Scratch visualizer, Version 1 of our game-state simulator is <b>also quite buggy</b>. If you notice that the Save State button doesn't save the state properly, or the indicator stops indicating properly, restart the simulation (reload the page) and try again.
+                          
+                        </span>
+                      </span>
+                    </div>
+     
+                    </div>
+
 
 
 
