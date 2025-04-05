@@ -601,7 +601,6 @@ body {
   line-height: 40px;
   font-weight: 400;
 }
-
 .page {
   display:contents;
   flex-direction: column;
@@ -612,7 +611,6 @@ body {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
 }
-
 
 
 

@@ -38,7 +38,7 @@
                  U24
                </div>
                <a class="u-24-mtgm-button">Modeling the Game Mathematically</a>
-               <a href="pages/game-state-visualizer-in-scratch.html" class="u-24-gsvis-button">Game-State Visualizer in Scratch</a>
+               <a class="u-24-gsvis-button">Game-State Visualizer in Scratch</a>
                <a href="pages/game-state-simulator-v1-in-unity.html" class="u-24-gssv-1-button">Game-State Simulator V1 in Unity</a>
                <div class="s-25">
                  <br />
@@ -320,16 +320,62 @@
 
                     <img style="display: block; margin: 0 auto;" class="jenga-tower-wide2" src="images/mtgm-tower-6.png" />
 
-
-
-
-
-
                   </div>
                 </div>
  
                 </div>
+                
 
+
+
+
+
+                <div class="page" id="gsvis_page">
+
+                  <div class="jenga-subsection">
+                    <span>
+                      <span class="overview-text-span">
+                        Game-State Visualizer in Scratch
+                        <br />
+                        <br />
+                      </span>
+                      <span class="overview-text-span4">
+                        Embedded below is a first version of our game-state visualizer, mocked up in <a class="link" href="https://scratch.mit.edu/projects/1038274559" target="_blank">Scratch</a>.<br/>
+                        The visualizer accepts a 54-bit binary sequence of 0s and 1s, and visualizes this sequence as a Jenga tower, where 0s are empty spaces and 1s are blocks.<br/>
+                        This visualizer was created to aid in our discourse surrounding the development of our eventual Unity game-state simulator, as we did not have access to an actual Jenga set at the time, making it difficult to convey ideas effectively.<br/>
+                        This tool can visualize all 2^54 unique configurations of Jenga blocks, including all impossible configurations (i.e., configurations with floating blocks).<br/><br/>
+
+                        It is worth noting that any state that is not <span class="binary">111111111111111111111111111111111111111111111111111111</span> is technically <em>not</em> a valid game state, as all 54 blocks must be in play during an official game of Jenga. Subsequently, we stopped using this visualizer soon after we began developing <a class="u-24-gssv1-button" style="color: #ff8aa2; font-weight: bold; padding: 0 0 0 0; background-color:rgba(0, 0, 0, 0);">V1 of our Unity Game-State Simulator.</a><br/><br/>
+                        <span class="overview-text-span3">
+                          Instructions
+                          <br />
+                        </span>
+                        <div class="jenga-subsection">
+                          <div class="overview-text2">
+                              <span class="overview-text-2-span5">
+                                To use the visualizer, press the green flag button (top left), and enter a 54-bit binary sequence in the text field.<br/>
+                        You can try recreating the various sequences detailed in <a class="u-24-mtgm-button" style="color: #ff8aa2; font-weight: bold; padding: 0 0 0 0; background-color:rgba(0, 0, 0, 0);">Modeling the Game Mathematically</a> by copy-pasting the following sequences:<br/>
+                        <span class="binary">111111111111111111111111111111111111111111111111111111</span><br/>
+                        <span class="binary">101101101101101101101101101101101101101101101101101101</span><br/>
+                        <span class="binary">010010010010010010010010010010010010010010010010010010</span><br/>
+                        <span class="binary">111111111000000000111111111000000000111111111000000000</span><br/>
+                        <span class="binary">001001100100001001100100001001100100001001100100001001</span><br/>                        
+                        <span class="binary">111111111111111111111111111111111111111111111111111100</span><br/> 
+                              </span>
+                          </div>
+                          <iframe src="https://scratch.mit.edu/projects/1038274559/embed" allowtransparency="true" width="740" height="430" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        </div>   
+                        <span class="overview-text-span3">
+                          Feature or Bug? You Decide!
+                          <br />
+                        </span>
+                        This visualizer is quite <b>buggy</b>. If you notice that pieces are stacked incorrectly, restart the visualizer (by clicking the green flag) and input your desired sequence again.
+                        
+                      </span>
+                    </span>
+                  </div>
+   
+                  </div>
 
 
 
