@@ -44,11 +44,9 @@
                  <br />
                  S25
                </div>
-               <a href="pages/revisiting-our-underlying-representation.html" class="s-25-rour-button">
-                 Revisiting our Underlying Representation
-               </a>
-               <a href="pages/game-sequence-generator-in-python.html" class="s-25-gsgip-button">Game Sequence Generator in Python</a>
-               <a href="pages/game-state-simulator-v2-in-unity.html" class="s-25-gssv-2-button">Game-State Simulator V2 in Unity</a>
+               <a class="s-25-rour-button unloadButton">Revisiting our Underlying Representation</a>
+               <a class="s-25-gsgip-button unloadButton">Game Sequence Generator in Python</a>
+               <a class="s-25-gssv-2-button unloadButton">Game-State Simulator V2 in Unity</a>
              </div>
              <div class="content">
 
@@ -365,12 +363,6 @@
                           </div>
                           <iframe src="https://scratch.mit.edu/projects/1038274559/embed" allowtransparency="true" width="740" height="430" frameborder="0" scrolling="no" allowfullscreen></iframe>
                         </div>   
-                        <span class="overview-text-span3">
-                          Feature or Bug? You Decide!
-                          <br />
-                        </span>
-                        This visualizer is quite <b>buggy</b>. If you notice that pieces are stacked incorrectly, restart the visualizer (by clicking the green flag) and input your desired sequence again.
-                        
                       </span>
                     </span>
                   </div>
@@ -467,11 +459,12 @@
 
                           </div>   
                           <span class="overview-text-span3">
-                            Not All Bugs Are Bad – Some Are Features
+                            Bug or Feature? You Decide!
                             <br />
                           </span>
-                          Not unlike our Scratch visualizer, Version 1 of our game-state simulator is <b>also quite buggy</b>. If you notice that the Save State button doesn't save the state properly, or the indicator stops indicating properly, restart the simulation (reload the page) and try again.
-                          
+                          <span class="overview-text-span4">
+                            As you'll likely notice, Version 1 of our game-state simulator is <b>quite buggy</b>. If you see that the Save State button doesn't save the state properly, or the indicator stops indicating properly, restart the simulation (reload the page) and try again.
+                          </span>
                         </span>
                       </span>
                     </div>
@@ -481,6 +474,126 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="page" id="gssv2_page">
+
+                      <div class="jenga-subsection">
+                        <span>
+                          <span class="overview-text-span">
+                            Game-State Simulator V2 in Unity
+                            <br />
+                            <br />
+                          </span>
+                          <span class="overview-text-span4">
+                            Embedded below is V2 of our <b>Unity Game-State Simulator</b>.<br/>
+                            [Placeholder Text].<br/><br/>
+    
+                            <span class="overview-text-span3">
+                              Instructions
+                              <br />
+                            </span>
+                            To start the simulator, press <b>Launch Simulator (V2)</b>.<br/>
+                            When the simulation starts, select blocks to remove them from the tower.<br/>
+                            When you're ready, press the <b>Start Button</b> to toggle gravity, and watch the chaos unfold.<br/>
+                            <span class="overview-text-span3">
+                              Controls
+                              <br />
+                            </span>
+                            <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                              <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/status_ok_tex.png" style="width:5vh;height:5vh;"></img> 
+                              <div style="padding-left: 1vh;">Status Indicator (Check or Cross)</div>
+                            </div>
+  
+                            <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                              <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/reset_state_button_tex.png" style="width:5vh;height:5vh;"></img> 
+                              <div style="padding-left: 1vh;">Reset Tower</div>
+                            </div>
+  
+                            <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                              <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/save_state_button_tex.png" style="width:5vh;height:5vh;"></img> 
+                              <div style="padding-left: 1vh;">Save Current Tower Configuration</div>
+                            </div>
+  
+                            <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                              <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/play_button_tex.png" style="width:5vh;height:5vh;"></img> 
+                              <div style="padding-left: 1vh;">Start/Stop Simulation (Toggle Gravity)</div>
+                            </div>
+  
+                            <div style="display: flex; flex-direction: row; align-items: center; padding: 5px;">
+                              <img src="https://raw.githubusercontent.com/move-master/MoveMaster/refs/heads/main/MoveMaster_UnityProject_V2/Assets/Materials/change_view_button_tex.png" style="width:5vh;height:5vh;"></img> 
+                              <div style="padding-left: 1vh;">Change Viewing Angle</div>
+                            </div>
+                            <div class="jenga-subsection">
+                              
+                              
+                              <button id="loadGame" style="background-color: rgb(74, 191, 187); font-family: 'Inter-Regular', sans-serif; padding: 10px; border-radius: 5px; ">Launch Simulator <b>(V1)</b></button>
+      
+                              <div id="iframeContainer"></div> <!-- This is where the iframe will be added -->
+  
+                              <script>
+                                  const loadButton = document.getElementById("loadGame");
+                                  const unloadButtons = document.querySelectorAll(".unloadButton"); // Select all elements with the "unloadButton" class
+                                  const container = document.getElementById("iframeContainer");
+  
+                                  loadButton.addEventListener("click", function() {
+                                      $(this).hide();
+                                      if (!container.querySelector("iframe")) { // Only add if it's not already loaded
+                                          const iframe = document.createElement("iframe");
+                                          iframe.src = "/MoveMaster_WEBGL_build_V4/"; // Your game URL
+                                          iframe.width = "1000";
+                                          iframe.height = "800";
+                                          iframe.frameBorder = "3"; // Set the frame border
+                                          iframe.style.border = "none"; // Set iframe border style
+                                          iframe.allowFullscreen = true;
+                                          container.appendChild(iframe);
+                                      }
+                                  });
+  
+                                  // Loop through all unloadButton elements and add the event listener to each
+                                  unloadButtons.forEach(function(button) {
+                                      button.addEventListener("click", function() {
+                                          $("#loadGame").show();
+                                          container.innerHTML = ""; // Removes the iframe
+                                      });
+                                  });
+                              </script>
+  
+                            </div>   
+                            <span class="overview-text-span3">
+                              Bug or Feature? You Decide!
+                              <br />
+                            </span>
+                            <span class="overview-text-span4">
+                              As you'll likely notice, Version 1 of our game-state simulator is <b>quite buggy</b>. If you see that the Save State button doesn't save the state properly, or the indicator stops indicating properly, restart the simulation (reload the page) and try again.
+                            </span>
+                          </span>
+                        </span>
+                      </div>
+       
+                      </div>
                
 
              </div>

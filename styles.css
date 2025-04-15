@@ -1,3 +1,12 @@
+#overview_page,
+#mtgm_page,
+#gsvis_page,
+#gssv1_page,
+#rour_page,
+#gsgip_page,
+#gssv2_page {
+  display: none;
+}
 body {
   color: #edeaff;
   font-family: "Inter-Regular", sans-serif;
@@ -85,7 +94,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  align-items: flex-start;
+  align-items: anchor-center;
   justify-content: flex-start;
   flex-shrink: 0;
   min-width: 200px;
@@ -110,7 +119,7 @@ body {
 }
 .rcos-logo {
   flex-shrink: 0;
-  width: 61px;
+  width: 62px;
   height: 25px;
   position: relative;
   object-fit: cover;
