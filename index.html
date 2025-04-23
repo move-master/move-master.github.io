@@ -144,7 +144,7 @@
                        eventually expand to include these factors.
                        <br />
                        To learn more about our conjecture (and our underlying
-                       representation of the game as a whole), see <a href="https://www.example.com" class="link" target="_blank">Modeling the Game
+                       representation of the game as a whole), see <a class="u-24-mtgm-button" style="color:#ff8aa2; padding:0%; font-weight: bold; background-color:rgba(0, 0, 0, 0)">Modeling the Game
                        Mathematically</a>.
                        <br />
                        <br />
@@ -159,7 +159,7 @@
                        sequence of 0s and 1s, and visualizes this sequence as a Jenga
                        tower, where 0s are empty spaces and 1s are blocks.
                        <br />
-                       To learn more about our visualizer, see <a href="https://www.example.com" class="link" target="_blank">Game-State Visualizer in
+                       To learn more about our visualizer, see <a class="u-24-gsvis-button" style="color:#ff8aa2; padding:0%; font-weight: bold; background-color:rgba(0, 0, 0, 0)">Game-State Visualizer in
                        Scratch</a>.
                        <br />
                        <br />
@@ -181,7 +181,7 @@
                        visualizer.
                        <br />
                        To learn more about the first version of our game-state
-                       simulator, see <a href="https://www.example.com" class="link" target="_blank">Game-State Simulator V1 in Unity</a>.
+                       simulator, see <a class="u-24-gssv-1-button" style="color:#ff8aa2; padding:0%; font-weight: bold; background-color:rgba(0, 0, 0, 0)">Game-State Simulator V1 in Unity</a>.
                        <br />
                      </span>
                      <span class="overview-text-3-span11">
@@ -193,7 +193,7 @@
                        <br />
                      </span>
                      <span class="overview-text-3-span13">
-                       In the first half of S25, we have achieved the following:
+                       Over the course of S25, we have achieved the following:
                        <br />
                      </span>
                      <ol class="overview-text-3-span14">
@@ -203,7 +203,13 @@
                        </li>
                      </ol>
                      <span class="overview-text-3-span15">
-                       [Placeholder Text]
+                      Since our original 54-bit binary sequence representation is highly inefficient to analyze, and does not adhere
+                      to one of the fundamental rules of Jenga (all blocks must remain in play at all times), we have decided
+                      to overhaul our underlying representation with a format that is not only more efficient to parse, but
+                      better adheres to the rules of Jenga overall.<br/>
+                      To learn more about this new representation format, see 
+                      <a class="s-25-rour-button" style="color:#ff8aa2; padding:0%; font-weight: bold; background-color:rgba(0, 0, 0, 0)">Revisiting our Underlying Representation</a>.
+                      
                        <br />
                        <br />
                      </span>
@@ -480,7 +486,76 @@
 
 
 
+                    <div class="page" id="rour_page">
+                      <div style="width: 75%;">
+                          <span class="overview-text-span" style="padding-bottom: 100%">
+                            Revisiting our Underlying Representation
+                            <br />
+                          </span>
+                          <p>
+                            Since our original 54-bit binary sequence representation is highly inefficient to analyze, and does not adhere
+                            to one of the fundamental rules of Jenga (all blocks must remain in play at all times), we have decided
+                            to overhaul our underlying representation with a format that is not only more efficient to parse, but
+                            better adheres to the rules of Jenga overall.
+                          </p>
+                          Consider the following game sequence:
+                          <div class="binary">03.2 14.1 17.3 42.1 07.3 51.2 27.3 11.2 38.1 32.1 08.2</div>
+                          The above sequence is an example of our new representation. Let's break down what each part of the sequence means.<br/><br/>
 
+                          <span class="overview-text-3-span5" style="padding:0%">
+                            Each substring of the form <span class="binary">##.#</span> represents a move in Jenga.
+                          </span>
+                          <br/>
+                          A move in Jenga consists of two primary actions-- removing a block from somewhere in the tower (excluding the top layer and the layer directly below an incomplete top layer), 
+                          and replacing the selected block in the top layer. Each substring of the above form represents this sequence of actions in a single move.
+                          <br/><br/>
+                          <span class="overview-text-3-span5" style="padding:0%">
+                            The number <em>before</em> the decimal in a move indicates the block being moved.
+                          </span>
+                          <br/>
+                          One of the only aspects of our original representation that is preserved within our new representation is our indexing system for each of the Jenga blocks. 
+                          Every block has a unique ID associated with it (some number 1 through 54), and it maintains this ID for the entire game. The number before the decimal point of a move is a block's ID.
+                          <br/><br/>
+                          <span class="overview-text-3-span5" style="padding:0%">
+                            The number <em>after</em> the decimal in a move indicates the position on the top of the tower that the block is placed.
+                          </span>
+                          <br/>
+                          Although the placement of a block on the top of a tower does not drastically impact the center of mass of the tower, once we definitively prove this (using physics),
+                          we will continue to track the position that the block is placed in.<br/><br/>
+                          <span class="overview-text-2-span" style="padding:0%">
+                            Benefits of our New Representation
+                          </span>
+                          <br/>
+                          <span class="overview-text-3-span5" style="padding:0%">
+                            1. It's Easier to Interpret / Parse
+                          </span>
+                          <br/>
+                          As briefly mentioned in the overview, one of the main benefits of our new representation is that game sequences are much easier to parse. 
+                          Not only does our representation allow an individual to trace through every single move made to the tower in chronological order, but each move can be ascribed to a specific player.<br/><br/>
+                          For instance, if a person is playing Jenga by themselves (sad!), then we can attribute every move in the sequence to player 1.
+                          However, if two people are playing Jenga against one another, we can attribute every "odd" move to player 1, and every "even" move to player 2 
+                          (in this context, since every game sequence is technically a list of moves delimited by spaces, we take "odd" moves to mean any moves that 
+                          land on an odd index, and "even" moves any  moves that land on an even index, assuming indexing starts at 1).
+                          This can be extended to even more players, with each player's set of turns being represented by the function \( f(x) = p+n\left(x-1\right) \),
+                           where \(n\) is the number of players, and \(p\) is the player in question (\(1,\,2,\, \dots,\,n\)). By extension, since the sequence ends when 
+                           the tower falls over, we know that the last move in the sequence is what caused the tower to fall, subsequently telling us which player is responsible for the tower falling.
+                          <br/>
+                          <br/>
+                          <span class="overview-text-3-span5" style="padding:0%">
+                            2. It Adheres to the Fundamental Rules of Jenga!
+                          </span>
+                          <br/>
+                          One of the major issues with our original representation is that any state that was not "<span class="binary">111111111111111111111111111111111111111111111111111111</span>" 
+                          was technically an invalid game state, as all blocks must remain in play at all times. Any deviation from the above sequence would mean that there are less than 54 blocks in play. 
+                          Furthermore, this representation did not allow for the stacking of blocks ontop of the tower, which is obviously not conducive to accurately modeling a game like Jenga.<br/>
+                          This is not to say that this way of representing the game was entirely useless, however. This representation greatly assisted us in building the framework for the first version 
+                          of our Unity simulator, especially with respect to the code that controls how blocks are cloned/placed, and figuring out how to parse string sequences to clone/place said blocks accordingly.<br/>
+                          Overall, our approach has been guided by a problem-solving philosophy that emphasizes starting with a simplified, idealized model to establish a foundational understanding and structure. 
+                          By doing so, we were able to rapidly prototype core systems and logic without being overwhelmed by every nuance of the real-world game. Once this initial framework was in place and functioning 
+                          reliably, we gradually introduced more complexity and realism to better align the simulation with the dynamics of an actual Jenga game. This iterative process allowed us to build confidence in 
+                          our codebase and ensured that each layer of complexity was added with intention and clarity.
+                        </div> 
+                      </div>
 
 
 
