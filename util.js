@@ -42,9 +42,38 @@ $(document).ready(function () {
     });
   }
 
+  function renameTab(sectionId) {
+    const allSections = [
+      "#overview_page",
+      "#mtgm_page",
+      "#gsvis_page",
+      "#gssv1_page",
+      "#rour_page",
+      "#gsgip_page",
+      "#gssv2_page"
+    ];
+    const sectionTitles = [
+      "Overview",
+      "Modeling the Game Mathematically",
+      "Game-State Visualizer in Scratch",
+      "Game-State Simulator V1 in Unity",
+      "Revisiting our Underlying Representation",
+      "Game Sequence Generator in Python",
+      "Game-State Simulator V2 in Unity"
+    ];
+
+    allSections.forEach(section => {
+      if (section === sectionId) {
+        const index = allSections.indexOf(sectionId);
+        $("title").text("MoveMaster | " + sectionTitles[index]);
+      }
+    });
+  }
+
   // Restore saved section on page load or default to overview
   const savedSection = localStorage.getItem("activeSection") || "#overview_page";
   showSection(savedSection);
+  renameTab(savedSection);
 
   // Also restore the correct button highlight
   const sectionToButton = {
@@ -62,35 +91,42 @@ $(document).ready(function () {
   $(".overview-button").click(function () {
     highlightButton(".overview-button");
     showSection("#overview_page");
+    renameTab("#overview_page");
   });
 
   $(".u-24-mtgm-button").click(function () {
     highlightButton(".u-24-mtgm-button");
     showSection("#mtgm_page");
+    renameTab("#mtgm_page");
   });
 
   $(".u-24-gsvis-button").click(function () {
     highlightButton(".u-24-gsvis-button");
     showSection("#gsvis_page");
+    renameTab("#gsvis_page");
   });
 
   $(".u-24-gssv-1-button").click(function () {
     highlightButton(".u-24-gssv-1-button");
     showSection("#gssv1_page");
+    renameTab("#gssv1_page");
   });
 
   $(".s-25-rour-button").click(function () {
     highlightButton(".s-25-rour-button");
     showSection("#rour_page");
+    renameTab("#rour_page");
   });
 
   $(".s-25-gsgip-button").click(function () {
     highlightButton(".s-25-gsgip-button");
     showSection("#gsgip_page");
+    renameTab("#gsgip_page");
   });
 
   $(".s-25-gssv-2-button").click(function () {
     highlightButton(".s-25-gssv-2-button");
     showSection("#gssv2_page");
+    renameTab("#gssv2_page");
   });
 });
