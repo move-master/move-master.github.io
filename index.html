@@ -223,7 +223,9 @@
                        <li value="2">Created a Jenga game sequence generator in Python.</li>
                      </ol>
                      <span class="overview-text-3-span17">
-                       [Placeholder Text]
+                      In order to train our ML model to generate optimal moves in Jenga, we need a sufficiently large dataset of training data. Thus, we developed a game sequence generator using Python, capable of generating hundreds of thousands of unique game sequences (according to our new representation).<br/>
+                      To learn more about our generator, see  
+                      <a class="s-25-gsgip-button" style="color:#ff8aa2; padding:0%; font-weight: bold; background-color:rgba(0, 0, 0, 0)">Game Sequence Generator in Python</a>.
                        <br />
                        <br />
                      </span>
@@ -234,7 +236,10 @@
                        </li>
                      </ol>
                      <span class="overview-text-3-span19">
-                       [Placeholder Text]
+                      Building on our original framework/prototype of our game sequence simulator, we updated our simulator so that it now accepts user-inputted game sequences, and executes said sequences in real-time.
+                      <br />
+                      To learn more about the second version of our game-state
+                      simulator, see <a class="s-25-gssv-2-button" style="color:#ff8aa2; padding:0%; font-weight: bold; background-color:rgba(0, 0, 0, 0)">Game-State Simulator V2 in Unity</a>.
                        <br />
                        <br />
                      </span>
@@ -706,37 +711,7 @@
                             <div class="jenga-subsection">
                               
                               
-                              <button id="loadGame" style="background-color: rgb(74, 191, 187); font-family: 'Inter-Regular', sans-serif; padding: 10px; border-radius: 5px; ">Launch Simulator <b>(V1)</b></button>
-      
-                              <div id="iframeContainer"></div> <!-- This is where the iframe will be added -->
-  
-                              <script>
-                                  const loadButton = document.getElementById("loadGame");
-                                  const unloadButtons = document.querySelectorAll(".unloadButton"); // Select all elements with the "unloadButton" class
-                                  const container = document.getElementById("iframeContainer");
-  
-                                  loadButton.addEventListener("click", function() {
-                                      $(this).hide();
-                                      if (!container.querySelector("iframe")) { // Only add if it's not already loaded
-                                          const iframe = document.createElement("iframe");
-                                          iframe.src = "/MoveMaster_WEBGL_build_V4/"; // Your game URL
-                                          iframe.width = "1000";
-                                          iframe.height = "800";
-                                          iframe.frameBorder = "3"; // Set the frame border
-                                          iframe.style.border = "none"; // Set iframe border style
-                                          iframe.allowFullscreen = true;
-                                          container.appendChild(iframe);
-                                      }
-                                  });
-  
-                                  // Loop through all unloadButton elements and add the event listener to each
-                                  unloadButtons.forEach(function(button) {
-                                      button.addEventListener("click", function() {
-                                          $("#loadGame").show();
-                                          container.innerHTML = ""; // Removes the iframe
-                                      });
-                                  });
-                              </script>
+                              <button id="loadGame2" style="background-color: rgb(74, 191, 187); font-family: 'Inter-Regular', sans-serif; padding: 10px; border-radius: 5px; ">[ <b>Coming Soon!</b> ]</button>
   
                             </div>   
                             <span class="overview-text-span3">
