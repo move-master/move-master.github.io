@@ -12,6 +12,12 @@
   src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script type="text/javascript" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+      <!-- PyScript CSS -->
+      <link rel="stylesheet" href="https://pyscript.net/releases/2025.2.1/core.css">
+
+      <!-- This script tag bootstraps PyScript -->
+      <script type="module" src="https://pyscript.net/releases/2025.2.1/core.js"></script>
    </head>
    <body>
       <div class="container">
@@ -556,6 +562,82 @@
                           our codebase and ensured that each layer of complexity was added with intention and clarity.
                         </div> 
                       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                      <div class="page" id="gsgip_page">
+                        <div style="width: 75%;">
+                            <span class="overview-text-span" style="padding-bottom: 100%">
+                              Game Sequence Generator in Python
+                              <br />
+                            </span>
+                            <p>
+                              Now that we have a reliable format in which we can store game sequences, we need a way to generate these game sequences to create a dataset that will eventually be used to train our ML model.
+                              <b>That's where our generator program comes in!</b>
+                              generator.py simulates a game of Jenga by generating move sequences based on probabilistic constraints. It constructs a virtual 18-layer tower, each containing 3 blocks, and attempts to move blocks from lower layers to the top while adhering to dynamically calculated probabilities of success.
+                            <br/>
+                            <br/>
+                            <span class="overview-text-3-span5" style="padding:0%">
+                              Usage
+                            </span>
+                            <br/>
+                            By default, the script runs the generator for 10 unique sequences and prints the analytics summary to the terminal.   
+                            <button id="pythonButton" onclick="loadPythonScript()" style="background-color: rgb(74, 191, 187); font-family: 'Inter-Regular', sans-serif; padding: 5px; border-radius: 5px;">Run Generator</button>
+                            <br/>
+
+                            <span id="pythonNote" style="color:rgb(173, 164, 185)"><em>Note</em>. Due to the unpredictable nature of running Python in the browser, the code may produce invalid sequences of length 1. Refresh the page and try again.</span>
+                            <script>
+                              $("#pythonNote").hide();
+                            </script>
+                            
+                            <div id="terminal-output"></div> <!-- This is where output will go -->
+
+                            <script>
+                              function loadPythonScript() {
+                                if (document.getElementById("py-script-loaded")) return;
+
+                                const pyScript = document.createElement("script");
+                                pyScript.setAttribute("type", "py");
+                                pyScript.setAttribute("src", "./generator.py");
+                                pyScript.setAttribute("config", "./pyscript.toml");
+                                pyScript.setAttribute("terminal", "");
+                                pyScript.setAttribute("output", "terminal-output"); // tell it where to print
+                                pyScript.id = "py-script-loaded";
+
+                                const outputDiv = document.getElementById("terminal-output");
+                                outputDiv.parentNode.insertBefore(pyScript, outputDiv.nextSibling);
+                                $("#pythonButton").hide();
+                                $("#pythonNote").fadeIn();
+                              }
+                            </script>
+                            
+                            <br/>
+                            <span class="overview-text-3-span5" style="padding:0%">
+                              Key Features
+                            </span>
+                            <br/>
+                            <ul>
+                              <li><b>Tower Structure</b>: A Tower class maintains the state of the block stack with each block tracked by an ID, position, and movement probability.</li>
+                              <li><b>Block Movement</b>: The script simulates block movements governed by several factors:</li>
+                              <li><b>Layer height</b>: Blocks higher up the tower are less likely to be moved.</li>
+                              <li><b>Neighboring block positions</b>: Blocks adjacent to a moved block have increased movement probability in subsequent turns.</li>
+                              <li><b>Turn count</b>: The longer the game runs, the more likely it becomes for a move to fail.</li>
+                              <li><b>Probability-Based Decision Making</b>: A move can probabilistically fail depending on the current block's assigned probability. This introduces randomness and simulates real-world instability.</li>
+                              <li><b>Sequence Generation</b>: The program generates a fixed number of unique sequences (SEQ_GEN_NUM) of successful (and failed) block moves. Each sequence represents a possible run of the game.</li>
+                              <li><b>Win Estimation</b>: The script assumes alternating turns between two players. It counts how often each player would "win" based on the length (even/odd) of each sequence.</li>
+                              <li><b>Analytics Output</b>: Minimum and maximum sequence lengths, number of sequences where moves failed due to low probability, and distribution of "wins" between the two players.</li>
+                            </ul>
+                          </div> 
+                        </div>
 
 
 
