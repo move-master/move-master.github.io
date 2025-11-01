@@ -26,4 +26,20 @@ document.addEventListener('DOMContentLoaded', function() {
             <a href=\"https://www.example.com/\">View our Repos on GitHub</a> \
         </div>";
     }
+
+    const content = document.getElementById('content');
+    if (content) {
+        content.innerHTML =" \
+        <zero-md src=\"home.md\"> \
+            <template> \
+                <style>  \
+                h1 { font-size: 24px; } \
+                p  { font-size: 16px; } \
+                </style> \
+            </template> \
+        </zero-md>"
+    }
+    else {
+        console.log("NOEP!")
+    }
 });
