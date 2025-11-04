@@ -1,0 +1,3 @@
+# Modeling the Game Mathematically
+
+In a classic game of Jenga, there are 54 wooden blocks. Assuming we can have less than 54 blocks in play at any point in the game (i.e., assuming we break the official rules of Jenga), this means that there are 2<sup>54</sup> = 18,014,398,509,000,000 (roughly 18 quadrillion) unique configurations of jenga blocks achievable by simply removing pieces from the original tower. In order to differentiate these game states from one another, let’s represent a game configuration as a 54-bit long sequence of binary:
