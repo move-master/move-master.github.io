@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <a href=\"/index.html\">Overview</a> \
             <h2>U24</h2> \
             <a href=\"/pages/u24-mtgm/u24-mtgm.html\">Modeling the Game Mathematically</a> \
-            <a href=\"https://www.example.com/\">Game-State Visualizer in Scratch</a> \
+            <a href=\"/pages/u24-gsvis/u24-gsvis.html\">Game-State Visualizer in Scratch</a> \
             <a href=\"https://www.example.com/\">Game-State Simulator V1 in Unity</a> \
             <h2>S25</h2> \
             <a href=\"https://www.example.com/\">Revisiting our Underlying Representation</a> \

@@ -3,9 +3,9 @@
 .centered {
     color: purple;
     display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center;    /* Centers content vertically */
-  min-height: 50px;      /* Example: Give the parent a defined height */
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
 }
 
 </style>
@@ -45,5 +45,3 @@ On the other hand, if we were to visualize a sequence like:
 This would result in the following game configuration:
 
 <div class="centered"><img src="/site_v1/images/mtgm-tower-3.png" height="400"></div>
-
-<div style="padding: 30px"></div>
