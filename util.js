@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         nav.innerHTML = 
         "<div class=\"nav\"> \
             <h1>Menu</h1> \
+            <a href=\"/index.html\">Overview</a> \
             <h2>U24</h2> \
             <a href=\"/pages/u24-mtgm/u24-mtgm.html\">Modeling the Game Mathematically</a> \
             <a href=\"https://www.example.com/\">Game-State Visualizer in Scratch</a> \
@@ -47,8 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 </style> \
             </template> \
         </zero-md>"
+        document.dispatchEvent(
+            new CustomEvent('markdownContentReady', { detail: { content } })
+        );
     }
     else {
-        console.log("NOEP!")
+        console.log("Error loading markdown content.")
     }
 });
