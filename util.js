@@ -24,15 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
             <h2>U24</h2> \
             <a href=\"/pages/u24-mtgm/u24-mtgm.html\">Modeling the Game Mathematically</a> \
             <a href=\"/pages/u24-gsvis/u24-gsvis.html\">Game-State Visualizer in Scratch</a> \
-            <a href=\"https://www.example.com/\">Game-State Simulator V1 in Unity</a> \
+            <a href=\"/pages/u24-gssv1/u24-gssv1.html\">Game-State Simulator V1 in Unity</a> \
             <h2>S25</h2> \
-            <a href=\"https://www.example.com/\">Revisiting our Underlying Representation</a> \
-            <a href=\"https://www.example.com/\">Game Sequence Generator in Python</a> \
-            <a href=\"https://www.example.com/\">Game-State Simulator V2 in Unity</a> \
+            <a href=\"/pages/s25-rour/s25-rour.html\">Revisiting our Underlying Representation</a> \
+            <a href=\"/pages/s25-gsgip/s25-gsgip.html\">Game Sequence Generator in Python</a> \
+            <a href=\"/pages/s25-gssv2/s25-gssv2.html\">Game-State Simulator V2 in Unity</a> \
             <h2>F25</h2> \
-            <a href=\"https://www.example.com/\">Designing a Deep Q-Learning Environment with the Gymnasiun API</a> \
-            <a href=\"https://www.example.com/\">Revisiting our Underlying Representation (Again)</a> \
-            <a href=\"https://www.example.com/\">Successor States Generator in Python</a> \
+            <a href=\"/pages/f25-dqnenvgym/f25-dqnenvgym.html\">Designing a Deep Q-Learning Environment with the Gymnasiun API</a> \
+            <a href=\"/pages/f25-roura/f25-roura.html\">Revisiting our Underlying Representation (Again)</a> \
+            <a href=\"/pages/f25-ssgip/f25-ssgip.html\">Successor States Generator in Python</a> \
         </div>";
     }
 

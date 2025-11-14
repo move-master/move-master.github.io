@@ -1,14 +1,5 @@
-<!-- Use this area to define page-specific CSS styles. -->
-<style>
-.centered {
-    color: purple;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50px;
-}
-
-</style>
+<!-- This links to our markdown-specific CSS styles. -->
+<link rel="stylesheet" href="/md-styles.css">
 
 # Game-State Visualizer in Scratch
 

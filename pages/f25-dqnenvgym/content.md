@@ -19,7 +19,7 @@ Visualizing this sequence, we have the following game configuration:
 
 <div class="centered"><img src="/site_v1/images/mtgm-tower-1.png" height="400"></div>
 
-This would be considered a “**success state**” because this tower is structurally sound and would not collapse.
+This would be considered a “success state” because this tower is structurally sound and would not collapse.
 Let’s consider another sequence:
 
 <span class="centered"> ```010 010 010 010 010 010 010 010 010 010 010 010 010 010 010 010 010 010```</span>
@@ -36,29 +36,3 @@ On the other hand, if we were to visualize a sequence like:
 This would result in the following game configuration:
 
 <div class="centered"><img src="/site_v1/images/mtgm-tower-3.png" height="400"></div>
-
-This would immediately be ruled out as a “**fail state**” because the tower is (clearly) unstable and would collapse.\
-Similarly, if we were to visualize a sequence like:
-
-<span class="centered"> ```001 001 100 100 001 001 100 100 001 001 100 100 001 001 100 100 001 001```</span>
-
-This would result in the following game configuration:
-
-<div class="centered"><img src="/site_v1/images/mtgm-tower-4.png" height="400"></div>
-
-Again, this would be considered a “fail state” because the tower is highly unstable and would collapse.\
-Although we could simply use the physics engine to determine which states are success and fail states (i.e., whether or not the tower falls over), if we assume that running a single simulation takes 0.1 seconds, this means that simulating all 2<sup>54</sup> possible configurations would take approximately 57,123,283 years (this is unreasonably long!). Thus, we must rely on analysis techniques to eliminate as many fail states as we can.
-
-## Eliminating “Fail States” Through Analysis
-
-As demonstrated earlier, not all 2<sup>54</sup> of these configurations are physically possible, as some of these combinations would result in floating pieces, or pieces whose center of mass is not supported, immediately constituting a fail state. In order to determine what fraction of these configurations result in fail states, let us reconsider 2 of the above examples:
-
-<div class="centered"><img src="/site_v1/images/mtgm-tower-5.png" height="400"></div>
-
-On the **left** is <span style="padding-left: 50px">`111 111 111 000 000 000 111 111 111 000 000 000 111 111 111 000 000 000`</span>.
-
-On the **right** is <span style="padding-left: 50px">`001 001 100 100 001 001 100 100 001 001 100 100 001 001 100 100 001 001`</span>.
-
-A similarity that exists between these two fail configurations is the presence of **two or more consecutive zeros within a single tribit**. Let’s visualize some more sequences to determine if this is a consistent pattern:
-
-<div class="centered"><img src="/site_v1/images/mtgm-tower-6.png" height="600"></div>
