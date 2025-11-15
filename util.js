@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (header) {
         header.innerHTML = 
         "<div class=\"header\"> \
-            <img src=\"/resources/mm-icon.png\" height=50> \
-            <img src=\"/resources/mm-logo.png\" height=35> \
+            <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-icon.png\" height=50></a> \
+            <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-logo.png\" height=35></a> \
             <h1>Documentation</h1> \
             <div class=\"vbar\"></div> \
             <a href=\"https://www.example.com/\">About Us</a> \

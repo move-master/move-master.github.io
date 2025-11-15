@@ -8,7 +8,7 @@ Originally an RCOS project, MoveMaster was created with the vision of combining 
 
 ## Jenga
 <div class="row-bound">
-  <p style="width: 50%">
+  <p style="width: 75%">
     In <a href="https://en.wikipedia.org/wiki/Jenga">Jenga</a>, players take turns strategically removing pieces from a tower made of 54 wooden blocks, and stacking these pieces on top. The objective of the game is to avoid knocking over the tower. Although this seems like a relatively simple objective, in practice, this proves to be easier said than done.</br>
     MoveMaster allows users to define the current state of a Jenga game (i.e., the displacement of blocks). Based on the current configuration of the tower, MoveMaster suggests the best possible move to maximize a player's chances of success.</br>
     As it currently stands, Jenga is the only tabletop game we have been developing MoveMaster for. However, we are open to exploring other tabletop games in the future.
@@ -53,3 +53,11 @@ To learn more about the second version of our game-state simulator, see [Game-St
 
 Over the course of F25, we acheived the following:
 
+### 1. Designed a Deep Q-Learning Environment With the Gymnasium API.
+After limited success in developing and training a ML Jenga agent using pre-generated data sets, we decided to pivot towards Deep Q-Learning, as not only does this seem to be a better-suited Reinforcement Learning technique for our specific application, but there is an extensive wealth of knowledge and existing resources regarding the development of a Gymnasium environment. Using a reward system governed by factors like the center of mass (CoM) and the current height of the tower, the program executes thousands of games (episodes) to slowly train the model to select the next best move in Jenga by adjusting weights in the DQN. To learn more about our design choices and process, see [Designing a Deep Q-Learning Environment with the Gymnasium API](/pages/f25-dqnenvgym/f25-dqnenvgym.html).
+
+### 2. Revisited our Underlying Representation... again!
+In light of us shifting our Reinforcement Learning approach, we came to the conclusion that our existing game representation format is ill-suited for the purposes of Deep Q-Learning, as it stores information that is too specific for the model to glean meaning from. For instance, our existing representation format allows us to encode the same game state in a number of different ways. While the underlying game sequence (i.e., the order in which blocks were moved / turns were taken) is fundamentally different, the issue is that the resulting state of the tower is the same. Having more than one way to represent a state would not allow the model to learn effectively, as it would constantly have to re-learn the same game states, failing to realize that it has seen these same game states prior. Subsequently, this has led us to revisit our underlying representation yet again, returning to a representation format rather reminiscent of our original format back in U25. To learn more about our new underlying representation (and why we ultimately moved away from our old one), see [Revisiting Our Underlying Representation (Again)](/pages/f25-roura/f25-roura.html).
+
+### 3. Successor States Generator in Python
+As part of our efforts in developing a Deep Q-Learning Jenga model, we were confronted with the fact that a DQN environment demands a finite action space associated with each possible state. Although we do not have a finite set of moves in the context of Jenga (i.e., Move Up, Down, Left, Right, etc.), it is possible to treat a finite set of valid state transitions as a stand-in for a finite action space. Therefore, we have written a successor state generator in Python that generates all of the successor states of a given state of Jenga. To learn more about our successor states generator, see [Successor States Generator in Python](/pages/f25-ssgip/f25-ssgip.html).
