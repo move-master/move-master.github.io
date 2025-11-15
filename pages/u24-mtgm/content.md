@@ -61,4 +61,4 @@ On the **right** is <span style="padding-left: 50px">`001 001 100 100 001 001 10
 
 A similarity that exists between these two fail configurations is the presence of **two or more consecutive zeros within a single tribit**. Let’s visualize some more sequences to determine if this is a consistent pattern:
 
-<div class="centered"><img src="/site_v1/images/mtgm-tower-6.png" height="600"></div>
+<div class="centered"><img src="/site_v1/images/mtgm-tower-6.png" height="400"></div>

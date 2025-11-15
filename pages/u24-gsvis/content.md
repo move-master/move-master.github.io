@@ -13,7 +13,7 @@ This tool can visualize all 2<sup>54</sup> unique configurations of Jenga blocks
 To use the visualizer, press the green flag button (top left), and enter a 54-bit binary sequence in the text field.
 
 <div class="centered">
-<iframe src="https://scratch.mit.edu/projects/1038274559/embed" allowtransparency="true" width="740" height="430" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<iframe src="https://scratch.mit.edu/projects/1038274559/embed" allowtransparency="true" width="740" height="600" frameborder="0" scrolling="no" allowfullscreen></iframe>
 </div>
 
 You can try recreating the various sequences detailed in [Modeling the Game Mathematically](/pages/u24-mtgm/u24-mtgm.html) by copy-pasting the following sequences:

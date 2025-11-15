@@ -8,7 +8,7 @@ Originally an RCOS project, MoveMaster was created with the vision of combining 
 
 ## Jenga
 <div class="row-bound">
-  <p style="line-height: 50px;">
+  <p style="width: 75%">
     In <a href="https://en.wikipedia.org/wiki/Jenga">Jenga</a>, players take turns strategically removing pieces from a tower made of 54 wooden blocks, and stacking these pieces on top. The objective of the game is to avoid knocking over the tower. Although this seems like a relatively simple objective, in practice, this proves to be easier said than done.</br>
     MoveMaster allows users to define the current state of a Jenga game (i.e., the displacement of blocks). Based on the current configuration of the tower, MoveMaster suggests the best possible move to maximize a player's chances of success.</br>
     As it currently stands, Jenga is the only tabletop game we have been developing MoveMaster for. However, we are open to exploring other tabletop games in the future.
