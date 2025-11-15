@@ -13,13 +13,13 @@ h3 {
     padding: 0 0 0 0;
 }
 
-h1,h2,h3,p {
+h1,h2,h3,p,ul {
     color: green;
 }
 
 
 strong {
-    -webkit-text-stroke: 0.5px green;
+    font-weight: 800;
 }
 
 .centered {
@@ -36,4 +36,5 @@ strong {
     flex-direction: row;
     justify-content: left;
     align-items: center;
+    gap: 5%;
 }
