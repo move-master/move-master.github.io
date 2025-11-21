@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <a href=\"/pages/s25-gsgip/s25-gsgip.html\">Game Sequence Generator in Python</a> \
             <a href=\"/pages/s25-gssv2/s25-gssv2.html\">Game-State Simulator V2 in Unity</a> \
             <h2>F25</h2> \
-            <a href=\"/pages/f25-dqnenvgym/f25-dqnenvgym.html\">Designing a Deep Q-Learning Environment with the Gymnasiun API</a> \
+            <a href=\"/pages/f25-dqnenvgym/f25-dqnenvgym.html\">Deep Q-Learning with the Gymnasiun API</a> \
             <a href=\"/pages/f25-roura/f25-roura.html\">Revisiting our Underlying Representation (Again)</a> \
             <a href=\"/pages/f25-ssgip/f25-ssgip.html\">Successor States Generator in Python</a> \
         </div>";
@@ -56,3 +56,30 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Error loading markdown content.")
     }
 });
+
+const showNavButton = document.getElementById("show-nav-button");
+
+let navIsVisible = true;
+
+showNavButton.addEventListener("click", function () {
+    console.log("Button was pressed!");
+    if (navIsVisible) {
+        nav.style.visibility = "hidden";
+        nav.style.height = "0px";
+        navIsVisible = false;
+    }
+    else {
+        nav.style.visibility = "visible";
+        nav.style.height = "max-content";
+        navIsVisible = true;
+    }
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 900) {
+        nav.style.visibility = "visible";
+        nav.style.height = "max-content";
+        navIsVisible = true;
+    }
+})
+

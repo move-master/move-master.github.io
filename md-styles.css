@@ -30,11 +30,28 @@ strong {
     min-height: 50px;
 }
 
+/* Styles for screens smaller than 600px (e.g., mobile phones) */
+@media (max-width: 899px) or (width: 899px) {
+    .row-bound {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        gap: 5%;
+    }
 
-.row-bound {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    gap: 5%;
+    #jenga-tower {
+        padding-bottom: 50px;
+    }
+}
+
+/* Styles for screens larger than 600px (e.g., desktops) */
+@media (min-width: 900px) {
+    .row-bound {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        gap: 5%;
+    }
 }

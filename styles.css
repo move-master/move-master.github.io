@@ -17,15 +17,6 @@ h2 {
     color: blue;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    height: max-content;
-    padding: 5px;
-    gap: 10px;
-    background-color: rgb(235, 212, 212);
-}
-
 .vbar {
     height: 30px;
     width: 2.5px;
@@ -33,16 +24,75 @@ h2 {
     background-color: black;
 }
 
-.hstack {
-    display: flex;
-    height: 100vh;
-    padding: 10px 0 0 0;
-    gap: 10px;
-    flex-direction: row;
-}
 
 /* Styles for screens smaller than 600px (e.g., mobile phones) */
-@media (max-width: 599px) {
+@media (max-width: 899px) or (width: 899px) {
+    .hstack {
+        display: flex;
+        height: 100vh;
+        padding: 10px 0 0 0;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: max-content;
+        padding: 5px;
+        gap: 10px;
+        background-color: rgb(235, 212, 212);
+    }
+    .nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: max-content;
+        padding: 20px;
+        gap: 15px;
+        background-color: rgb(235, 212, 212);
+        /*visibility: hidden;
+        width: 0px;*/
+    }
+    #show-nav-button {
+        visibility: visible;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        height: 100%;
+        width: 90%;
+        padding-left: 20px;
+        padding-right: 40px;
+        gap: 15px;
+    }
+}
+
+/* Styles for screens larger than 600px (e.g., desktops) */
+@media (min-width: 900px) {
+    .hstack {
+        display: flex;
+        height: 100vh;
+        padding: 10px 0 0 0;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: max-content;
+        padding: 5px;
+        gap: 10px;
+        background-color: rgb(235, 212, 212);
+    }
     .nav {
         display: flex;
         flex-direction: column;
@@ -52,31 +102,18 @@ h2 {
         padding: 20px;
         gap: 15px;
         background-color: rgb(235, 212, 212);
+    }
+    #show-nav-button {
         visibility: hidden;
-        width: 0px;
     }
-}
 
-/* Styles for screens larger than 991px (e.g., desktops) */
-@media (min-width: 600px) {
-    .nav {
+    .content {
         display: flex;
         flex-direction: column;
         align-items: baseline;
-        width: 15vw;
-        height: max-content;
+        height: 100%;
+        width: 70%;
         padding: 20px;
         gap: 15px;
-        background-color: rgb(235, 212, 212);
     }
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    height: 100%;
-    width: 70%;
-    padding: 20px;
-    gap: 15px;
 }
