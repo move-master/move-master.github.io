@@ -81,5 +81,16 @@ window.addEventListener("resize", () => {
         nav.style.height = "max-content";
         navIsVisible = true;
     }
+    else {
+        const header = document.getElementById('header');
+        header.innerHTML = "<div class=\"header\" style=\"flex-direction: column; align-items: center;justify-content: center; gap: 0px;\"> \
+            <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-logo.png\" height=35></a> \
+            <div> \
+                <div class=\"header-elements\"><a href=\"https://www.example.com/\">About Us</a></div> \
+                <div class=\"header-elements\"><a href=\"https://www.example.com/\">View our Project on rcos.io</a></div> \
+                <div class=\"header-elements\"><a href=\"https://www.example.com/\">View our Repos on GitHub</a></div> \
+                </div> \
+            </div>";
+    }
 })
 
