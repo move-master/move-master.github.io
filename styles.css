@@ -67,7 +67,9 @@ h2 {
         width: 0px;*/
     }
     #show-nav-button {
-        -webkit-appearance: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         height: max-content;
         visibility: visible;
     }
