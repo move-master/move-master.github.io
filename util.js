@@ -28,6 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const nav = document.getElementById('nav');
     if (nav) {
+        if (window.innerWidth < 900) {
+            nav.style.visibility = "hidden";
+            nav.style.height = "0px";
+            navIsVisible = false;
+        }
         nav.innerHTML = 
         "<div class=\"nav\"> \
             <h1>Menu</h1> \
@@ -106,6 +111,11 @@ window.addEventListener("resize", () => {
             </div>";        
     }
     else {
+        if (navIsVisible) {
+            nav.style.visibility = "hidden";
+            nav.style.height = "0px";
+            navIsVisible = false;
+        }
         const header = document.getElementById('header');
         header.innerHTML = "<div class=\"header\" style=\"flex-direction: column; align-items: center;justify-content: center; gap: 0px;\"> \
             <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-logo.png\" height=35></a> \
