@@ -1,18 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
     if (header) {
-        header.innerHTML = 
-        "<div class=\"header\"> \
-            <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-icon.png\" height=50></a> \
+        if (window.innerWidth >= 900) {
+            header.innerHTML = 
+            "<div class=\"header\"> \
+                <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-icon.png\" height=50></a> \
+                <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-logo.png\" height=35></a> \
+                <h1>Documentation</h1> \
+                <div class=\"vbar\"></div> \
+                <a href=\"https://www.example.com/\">About Us</a> \
+                <div class=\"vbar\"></div> \
+                <a href=\"https://www.example.com/\">View our Project on rcos.io</a> \
+                <div class=\"vbar\"></div> \
+                <a href=\"https://www.example.com/\">View our Repos on GitHub</a> \
+            </div>";
+        } else {
+            header.innerHTML = "<div class=\"header\" style=\"flex-direction: column; align-items: center;justify-content: center; gap: 0px;\"> \
             <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-logo.png\" height=35></a> \
-            <h1>Documentation</h1> \
-            <div class=\"vbar\"></div> \
-            <a href=\"https://www.example.com/\">About Us</a> \
-            <div class=\"vbar\"></div> \
-            <a href=\"https://www.example.com/\">View our Project on rcos.io</a> \
-            <div class=\"vbar\"></div> \
-            <a href=\"https://www.example.com/\">View our Repos on GitHub</a> \
-        </div>";
+            <div> \
+                <div class=\"header-elements\"><a href=\"https://www.example.com/\">About Us</a></div> \
+                <div class=\"header-elements\"><a href=\"https://www.example.com/\">View our Project on rcos.io</a></div> \
+                <div class=\"header-elements\"><a href=\"https://www.example.com/\">View our Repos on GitHub</a></div> \
+                </div> \
+            </div>";
+        }
     }
 
     const nav = document.getElementById('nav');
@@ -80,6 +91,19 @@ window.addEventListener("resize", () => {
         nav.style.visibility = "visible";
         nav.style.height = "max-content";
         navIsVisible = true;
+
+        header.innerHTML = 
+            "<div class=\"header\"> \
+                <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-icon.png\" height=50></a> \
+                <a href=\"/index.html\" style=\"padding-top: 10px;\"><img src=\"/resources/mm-logo.png\" height=35></a> \
+                <h1>Documentation</h1> \
+                <div class=\"vbar\"></div> \
+                <a href=\"https://www.example.com/\">About Us</a> \
+                <div class=\"vbar\"></div> \
+                <a href=\"https://www.example.com/\">View our Project on rcos.io</a> \
+                <div class=\"vbar\"></div> \
+                <a href=\"https://www.example.com/\">View our Repos on GitHub</a> \
+            </div>";        
     }
     else {
         const header = document.getElementById('header');
